@@ -63,6 +63,9 @@ class BlackjackEnv(gym.Env):
         
         self.dealer_showing = self.dealer_hand[0]
         
+        if hasattr(self, 'dealer_sum'):
+            delattr(self, 'dealer_sum')
+        
         self.natural_blackjack = self._is_natural_blackjack(self.player_hand)
         
         observation = (self.player_sum, self.dealer_showing, int(self.usable_ace))
@@ -108,7 +111,7 @@ class BlackjackEnv(gym.Env):
         return observation, reward, terminated, info
     
     def _play_dealer(self) -> float:
-       
+
         dealer_sum, dealer_usable_ace = self._calculate_hand(self.dealer_hand)
         
         while dealer_sum < 17:

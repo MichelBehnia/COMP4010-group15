@@ -113,7 +113,6 @@ def evaluate_policy(env, policy, num_episodes=1000, policy_name="Policy"):
     blackjack_rate = (blackjacks / num_episodes) * 100
     
     print(f"\nResults:")
-    print(f"  Average Reward: {avg_reward:.4f} ± {std_reward:.4f}")
     print(f"  Average Steps per Episode: {avg_steps:.2f}")
     print(f"\nOutcome Distribution:")
     print(f"  Wins:       {wins:4d} ({win_rate:5.2f}%)")
@@ -197,15 +196,15 @@ def main():
     
     env = BlackjackEnv()
     
-    random_stats = evaluate_policy(env, random_policy, num_episodes=10000, policy_name="Random Policy")
+    random_stats = evaluate_policy(env, random_policy, num_episodes=1000000, policy_name="Random Policy")
     
     input("\nPress Enter to run policy evaluation on simple policy")
 
-    simple_stats = evaluate_policy(env, simple_policy,  num_episodes=10000,  policy_name="Simple Policy (Stand on 17+)")
+    simple_stats = evaluate_policy(env, simple_policy,  num_episodes=1000000,  policy_name="Simple Policy (Stand on 17+)")
     
     input("\nPress Enter to run policy evaluation on basic strategy policy")
     
-    basic_stats = evaluate_policy(env, basic_strategy_policy, num_episodes=10000, policy_name="Basic Strategy")
+    basic_stats = evaluate_policy(env, basic_strategy_policy, num_episodes=1000000, policy_name="Basic Strategy")
     
     input("\nPress Enter to see policy comparison summary")
 
