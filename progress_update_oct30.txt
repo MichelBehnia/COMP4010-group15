@@ -1,0 +1,15 @@
+Michel B.
+     past 2 weeks: Collaborated on initial environment design in README.txt and environment implementation in blackjack_env.py as well as demo_interaction.py
+     next 2 weeks: going to look into how I can adjust the environment to implement card counting, adjusting the infinate deck to a standard 8 deck shoe etc., as well as looking into a GUI
+Ben C.
+    past 2 weeks: Collaborated on initial environment design in README.txt and environment implementation in blackjack_env.py as well as demo_interaction.py
+    next 2 weeks: Add double down and surrender actions to the environment
+Luka G.
+    past 2 weeks: Collaborated on initial environment design in README.txt and environment implementation in blackjack_env.py as well as demo_interaction.py
+    next 2 weeks: continue to explore more policy options (SARSA, Q-Learning) & how evaluation and improvement can be done for a varianted blackjack
+Sam J.
+    past 2 weeks: Collaborated on initial environment design in README.txt and environment implementation in blackjack_env.py as well as demo_interaction.py
+    next 2 weeks: Begin implementing Monte-Carlo control into improved environment
+
+
+We were hoping you could tell us if what we have in terms of planned variants (double down, surrender) from standard blackjack is sufficient for the project, if not how much more complicated do you feel the project should be? Thank you!

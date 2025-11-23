@@ -1,0 +1,10 @@
+FINISHED PAST 2 WEEKS (everyone): 
+Finalized design & have a concrete plan for comparisons
+Tested and implemented algorithms for double, insurance, and split (monte carlo, qlearning, & masked ppo)
+Started implementation of 8 deck environment for card counting
+ 
+TO DO FOR NEXT 2 WEEKS:
+Finalize 8 deck environment in code
+Complete comparison
+Record demo
+Finalize report

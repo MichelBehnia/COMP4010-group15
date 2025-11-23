@@ -1,0 +1,4 @@
+gymnasium==1.2.2
+numpy==2.3.4
+sb3_contrib==2.7.0
+stable_baselines3==2.7.0
