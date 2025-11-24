@@ -542,19 +542,26 @@ class BlackjackEnv(gym.Env):
     def action_masks(self) -> np.ndarray:
         mask = np.zeros(5, dtype=bool)
         
-        # Stand (0) and Hit (1) are always valid
+        # Stand (0) is always valid
         mask[0] = True
-        mask[1] = True
         
-        # Double down (2) only valid on first action
-        if self.first_action and not self.is_split:
+        # Hit (1) only valid if not at 21 (no reason to hit on 21)
+        if self.player_sum < 21:
+            mask[1] = True
+        
+        # Double down (2) only valid on first action AND not with blackjack/21
+        if self.first_action and not self.is_split and not self.natural_blackjack and self.player_sum < 21:
             mask[2] = True
         elif self.is_split and self.active_hand_index < len(self.hand_first_actions):
             # For split hands, check if current hand's first action
-            mask[2] = self.hand_first_actions[self.active_hand_index]
+            if self.hand_first_actions[self.active_hand_index]:
+                # Also check the hand isn't already 21
+                hand_sum, _ = self._calculate_hand(self.split_hands[self.active_hand_index])
+                if hand_sum < 21:
+                    mask[2] = True
         
-        # Split (3) only valid on first action with matching cards
-        if self.first_action and len(self.player_hand) == 2 and self.player_hand[0] == self.player_hand[1]:
+        # Split (3) only valid on first action with matching cards (and not blackjack)
+        if self.first_action and len(self.player_hand) == 2 and self.player_hand[0] == self.player_hand[1] and not self.natural_blackjack:
             mask[3] = True
         elif self.is_split and self.active_hand_index < len(self.hand_first_actions):
             # For split hands, check if re-split is possible
