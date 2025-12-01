@@ -1,0 +1,11 @@
+What we did in past 2 weeks:
+Tested algorithm's to get results
+Fixed a bug with action masking
+Working on report
+Recorded demo
+Updated requirements
+
+Next 2 weeks:
+Look for any additional improvements in algorithms (adjust parameters)
+Run more tests to obtain more consistent results for report
+Finish and submit final report
